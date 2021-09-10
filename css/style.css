@@ -15,6 +15,11 @@ input:focus {
 
 i:hover {
     cursor: pointer;
+    color: rgb(58, 170, 58);
+}
+
+.person:hover {
+    cursor: pointer;
 }
 /* fine common */
 
@@ -175,8 +180,16 @@ i:hover {
 }
 
 .name-person {
+    display: flex;
+    flex-direction: column;
     margin-left: 20px;
     font-size: 18px;
+}
+
+.name-person span:last-child {
+    margin-top: 8px;
+    font-size: 14px;
+    color: grey;
 }
 /* fine col-sx */
 
@@ -227,10 +240,31 @@ i:hover {
 }
 
 .chat {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: calc(100% - 160px);
     overflow-y: scroll;
     background-image: url("../img/mine.jpg");
+}
+
+.message-computer {
+    padding: 10px;
+    margin: 10px;
+    max-width: 70%;
+    width: max-content;
+    background-color: white;
+    border-radius: 15px 15px 15px 0;
+}
+
+.message-person {
+    padding: 10px;
+    margin: 10px;
+    max-width: 70%;
+    width: max-content;
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    border-radius: 15px 15px 0 15px;
 }
 
 .message {
