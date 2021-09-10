@@ -46,32 +46,11 @@
                     </div>
                 </div>
                 <div class="contact">
-                    <!-- persona 1 -->
-                    <div class="person">
-                        <img src="img/avatar_1.jpg" alt="utente1">
+                    <!-- persona 1  utilizzare il v-for-->
+                    <div v-for="contact in contacts" class="person">
+                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
                         <div class="name-person">
-                            <span>Michele</span>
-                        </div>
-                    </div>
-                    <!-- persona 2 -->
-                    <div class="person">
-                        <img src="img/avatar_2.jpg" alt="utente2">
-                        <div class="name-person">
-                            <span>Fabio</span>
-                        </div>
-                    </div>
-                    <!-- persona 3 -->
-                    <div class="person">
-                        <img src="img/avatar_3.jpg" alt="utente3">
-                        <div class="name-person">
-                            <span>Samuele</span>
-                        </div>
-                    </div>
-                    <!-- persona 4 -->
-                    <div class="person">
-                        <img src="img/avatar_4.jpg" alt="utente4">
-                        <div class="name-person">
-                            <span>Luisa</span>
+                            <span>{{contact.name}}</span>
                         </div>
                     </div>
                 </div>
@@ -80,9 +59,26 @@
 
             <!-- colonna dx -->
             <div class="col-right">
-                <div class="receiver"></div>
+                <div class="receiver">
+                    <div class="receiver-left">
+                        <img src="img/avatar_1.jpg" alt="">
+                        <div class="receiver-info">
+                            <span>Michele</span>
+                            <p>Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+                    <div class="receiver-right">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
                 <div class="chat"></div>
-                <div class="message"></div>
+                <div class="message">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
             </div>
             <!-- fine colonna dx -->
             
