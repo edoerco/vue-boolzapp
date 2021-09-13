@@ -92,10 +92,19 @@ const app = new Vue({
         getAvatarPhoto(contact) {
             return 'img/avatar' + contact.avatar + '.jpg'
         },
+
         getUser(index) {
             this.counter = index;
             console.log(this.counter);
-        }
+        },
+
+        lastMessage(contact) {
+            if(contact.messages == null) {
+                return '';
+            }
+            return contact.messages[contact.messages.length - 1].message 
+        } 
     },
 })
+
 

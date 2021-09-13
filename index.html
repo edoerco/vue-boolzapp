@@ -51,7 +51,9 @@
                         <img :src="getAvatarPhoto(contact)" alt="contact.name">
                         <div class="name-person">
                             <span>{{contact.name}}</span>
-                            <span>pippo</span>
+                            <span>{{lastMessage(contact)}}</span>
+                            <!-- chiedere come stampare l'ultimo messaggio  -->
+                            <!-- <span v-if="contact.messages[counter].message < counter">{{contact.message}}</span> -->
                         </div>
                     </div>
                 </div>
