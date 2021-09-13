@@ -85,6 +85,8 @@ const app = new Vue({
                 ],
             },
         ]
-    }
+    },
+    mounted() {},
+    methods:{},
 })
 

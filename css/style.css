@@ -248,7 +248,7 @@ i:hover {
     background-image: url("../img/mine.jpg");
 }
 
-.message-computer {
+.message-received {
     padding: 10px;
     margin: 10px;
     max-width: 70%;
@@ -257,7 +257,7 @@ i:hover {
     border-radius: 15px 15px 15px 0;
 }
 
-.message-person {
+.message-sent {
     padding: 10px;
     margin: 10px;
     max-width: 70%;
