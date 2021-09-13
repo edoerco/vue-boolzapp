@@ -248,16 +248,22 @@ i:hover {
     background-image: url("../img/mine.jpg");
 }
 
-.message-received {
+.chat-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.received {
     padding: 10px;
     margin: 10px;
     max-width: 70%;
+    align-self: flex-start;
     width: max-content;
     background-color: white;
     border-radius: 15px 15px 15px 0;
 }
 
-.message-sent {
+.sent {
     padding: 10px;
     margin: 10px;
     max-width: 70%;

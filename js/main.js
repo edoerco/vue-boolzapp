@@ -84,9 +84,18 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        counter: 0,
     },
     mounted() {},
-    methods:{},
+    methods:{
+        getAvatarPhoto(contact) {
+            return 'img/avatar' + contact.avatar + '.jpg'
+        },
+        getUser(index) {
+            this.counter = index;
+            console.log(this.counter);
+        }
+    },
 })
 

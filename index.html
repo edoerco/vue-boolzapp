@@ -47,8 +47,8 @@
                 </div>
                 <div class="contact">
                     <!-- persona 1  utilizzare il v-for-->
-                    <div v-for="contact in contacts" class="person">
-                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="contact.name">
+                    <div v-for="(contact, index) in contacts" @click="getUser(index)" class="person">
+                        <img :src="getAvatarPhoto(contact)" alt="contact.name">
                         <div class="name-person">
                             <span>{{contact.name}}</span>
                             <span>pippo</span>
@@ -62,9 +62,9 @@
             <div class="col-right">
                 <div class="receiver">
                     <div class="receiver-left">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div class="receiver-info">
-                            <span>Michele</span>
+                            <span>{{contacts[counter].name}}</span>
                             <p>Ultimo accesso oggi alle</p>
                         </div>
                     </div>
@@ -74,13 +74,9 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div v-for="message in contacts" class="chat">
-                    <div class="message-received">
-                        <p>inserire messaggi inviati</p>
-                        <span>10/10/10</span>
-                    </div>
-                    <div class="message-sent">
-                        <p>inserire i messaggi inviati</p>
+                <div class="chat">
+                    <div v-for="text in contacts[counter].messages" class="chat-area">
+                        <div :class="text.status">{{text.message}}</div>
                     </div>
                 </div>
                 <div class="message">
@@ -94,6 +90,7 @@
         </div>
     </div>
 
+    <!-- <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/main.js"></script>
 </body>
