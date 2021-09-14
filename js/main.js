@@ -87,9 +87,10 @@ const app = new Vue({
         ],
         counter: 0,
         newMessage: '',
+        search: '',
     },
-    mounted() {},
     methods:{
+        // milestone 2
         getAvatarPhoto(contact) {
             return 'img/avatar' + contact.avatar + '.jpg'
         },
@@ -105,6 +106,7 @@ const app = new Vue({
             }
             return contact.messages[contact.messages.length - 1].message 
         },
+        // milestone 3
         addMessage() {
             if(this.newMessage != '') {
                 let newMessage = this.newMessage;
@@ -126,6 +128,15 @@ const app = new Vue({
             }, 2500);
         },
     },
+    computed: {
+        // milestone 4
+        filterContacts: function() {
+            if(this.search != '') {
+                return this.contacts.filter(x => x.name.toLowerCase().includes(this.search.toLowerCase()));
+            }
+            return this.contacts
+        },
+    }
 })
 
 

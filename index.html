@@ -42,12 +42,12 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="input-search">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
                     </div>
                 </div>
                 <div class="contact">
-                    <!-- persona 1  utilizzare il v-for-->
-                    <div v-for="(contact, index) in contacts" @click="getUser(index)" class="person">
+                    <!-- milestone 1 -->
+                    <div v-for="(contact, index) in filterContacts" @click="getUser(index)" class="person">
                         <img :src="getAvatarPhoto(contact)" alt="contact.name">
                         <div class="name-person">
                             <span>{{contact.name}}</span>
@@ -62,9 +62,9 @@
             <div class="col-right">
                 <div class="receiver">
                     <div class="receiver-left">
-                        <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
+                        <img :src="`img/avatar${filterContacts[counter].avatar}.jpg`" alt="">
                         <div class="receiver-info">
-                            <span>{{contacts[counter].name}}</span>
+                            <span>{{filterContacts[counter].name}}</span>
                             <p>Ultimo accesso oggi alle</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="chat">
-                    <div v-for="text in contacts[counter].messages" class="chat-area">
+                    <div v-for="text in filterContacts[counter].messages" class="chat-area">
                         <div :class="text.status">
                             <p>{{text.message}}</p>
                             <span id="data-chat">{{text.date}}</span>
