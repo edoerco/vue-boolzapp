@@ -85,19 +85,28 @@ const app = new Vue({
                 ],
             },
         ],
-        counter: 0,
+        selectedContact: null,
         newMessage: '',
         search: '',
     },
+    mounted() {
+        // inizializzare il primo contatto dell'elenco 
+        this.selectedContact = this.contacts[0]
+    },
+
     methods:{
         // milestone 2
         getAvatarPhoto(contact) {
+            if(contact == null) {
+                return '';
+            }
             return 'img/avatar' + contact.avatar + '.jpg'
         },
-
-        getUser(index) {
-            this.counter = index;
-            console.log(this.counter);
+        
+        // non lavoriamo piu con l'indice ma con l'ogg
+        getUser(contact) {
+            this.selectedContact = contact;
+            console.log(this.selectedContact);
         },
 
         lastMessage(contact) {
@@ -115,7 +124,7 @@ const app = new Vue({
                     message: newMessage,
                     status: 'sent',
                 };
-                this.contacts[this.counter].messages.push(tmp);
+                this.selectedContact.messages.push(tmp);
                 this.newMessage = '';
             }
             setTimeout(() => {
@@ -124,17 +133,20 @@ const app = new Vue({
                     message: 'ok',
                     status: 'received',
                 };
-                this.contacts[this.counter].messages.push(tmp);
+                this.selectedContact.messages.push(tmp);
             }, 2500);
         },
     },
+    // milestone 4
     computed: {
-        // milestone 4
         filterContacts: function() {
             if(this.search != '') {
+                console.log(this.contacts.filter(x => x.name.toLowerCase().includes(this.search.toLowerCase())))
                 return this.contacts.filter(x => x.name.toLowerCase().includes(this.search.toLowerCase()));
             }
-            return this.contacts
+            else {
+                return this.contacts;
+            }
         },
     }
 })
