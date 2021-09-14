@@ -254,7 +254,7 @@ i:hover {
 }
 
 .received {
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     max-width: 70%;
     align-self: flex-start;
@@ -264,13 +264,20 @@ i:hover {
 }
 
 .sent {
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     max-width: 70%;
     width: max-content;
     align-self: flex-end;
     background-color: #dcf8c6;
     border-radius: 15px 15px 0 15px;
+}
+
+#data-chat {
+    float: right;
+    font-size: 10px;
+    color: grey;
+    margin-top: 5px;
 }
 
 .message {
